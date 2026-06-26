@@ -34,6 +34,7 @@ function onSearch() {
         <RouterLink to="/live" class="flex items-center gap-1 hover:underline">
           <span class="h-1.5 w-1.5 animate-pulse rounded-full bg-white"></span>直播
         </RouterLink>
+        <RouterLink to="/showroom" class="hover:underline">卡片庫</RouterLink>
         <span class="opacity-90">購物車</span>
         <LocaleSwitcher class="text-white" />
       </nav>
