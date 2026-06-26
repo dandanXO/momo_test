@@ -1,0 +1,15 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About"
+  },
+  "home": {
+    "title": "Home",
+    "welcome": "Welcome to your Vue 3 application."
+  },
+  "about": {
+    "title": "About",
+    "description": "This is the about page."
+  },
+  "language": "Language"
+}

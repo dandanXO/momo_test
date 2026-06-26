@@ -1,12 +1,17 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
+import { useI18n } from 'vue-i18n'
+import LocaleSwitcher from '@/components/LocaleSwitcher.vue'
+
+const { t } = useI18n()
 </script>
 
 <template>
   <header>
     <nav>
-      <RouterLink to="/">Home</RouterLink>
-      <RouterLink to="/about">About</RouterLink>
+      <RouterLink to="/">{{ t('nav.home') }}</RouterLink>
+      <RouterLink to="/about">{{ t('nav.about') }}</RouterLink>
+      <LocaleSwitcher />
     </nav>
   </header>
 
@@ -20,6 +25,7 @@ header {
 
 nav {
   display: flex;
+  align-items: center;
   gap: 1rem;
   padding: 1rem 2rem;
   font-size: 0.95rem;

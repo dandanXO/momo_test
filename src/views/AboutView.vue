@@ -1,10 +1,13 @@
 <script setup lang="ts">
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
 </script>
 
 <template>
   <main class="page">
-    <h1>About</h1>
-    <p>This is the about page.</p>
+    <h1>{{ t('about.title') }}</h1>
+    <p>{{ t('about.description') }}</p>
   </main>
 </template>
 

@@ -1,10 +1,13 @@
 <script setup lang="ts">
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
 </script>
 
 <template>
   <main class="page">
-    <h1>Home</h1>
-    <p>Welcome to your Vue 3 application.</p>
+    <h1>{{ t('home.title') }}</h1>
+    <p>{{ t('home.welcome') }}</p>
   </main>
 </template>
 
