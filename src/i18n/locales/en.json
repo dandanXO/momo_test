@@ -1,20 +1,5 @@
 {
-  "nav": {
-    "home": "Home",
-    "about": "About"
-  },
-  "home": {
-    "title": "Home",
-    "welcome": "Welcome to your Vue 3 application."
-  },
-  "about": {
-    "title": "About",
-    "description": "This is the about page."
-  },
-  "language": "Language",
-  "counter": {
-    "count": "Count",
-    "double": "Double",
-    "increment": "Increment"
-  }
+  "nav": { "discover": "Discover", "live": "Live", "cart": "Cart" },
+  "search": { "placeholder": "Search products, brands, deals…", "button": "Search" },
+  "language": "Language"
 }

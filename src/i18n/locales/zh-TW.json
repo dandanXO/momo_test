@@ -1,20 +1,5 @@
 {
-  "nav": {
-    "home": "首頁",
-    "about": "關於"
-  },
-  "home": {
-    "title": "首頁",
-    "welcome": "歡迎使用你的 Vue 3 應用程式。"
-  },
-  "about": {
-    "title": "關於",
-    "description": "這是關於頁面。"
-  },
-  "language": "語言",
-  "counter": {
-    "count": "計數",
-    "double": "兩倍",
-    "increment": "增加"
-  }
+  "nav": { "discover": "探索", "live": "直播", "cart": "購物車" },
+  "search": { "placeholder": "搜尋商品、品牌、活動…", "button": "搜尋" },
+  "language": "語言"
 }
