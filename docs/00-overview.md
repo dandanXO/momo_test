@@ -32,3 +32,4 @@
 - `01-architecture.md` — 系統分層、卡片 schema 設計、資料層契約、狀態管理。
 - `02-tradeoffs.md` — 優先順序、刻意不做清單與理由、未來演進方向。
 - `03-agent-collaboration.md` — Human-Agent Iteration、驗證 / Observability 思維。
+- `04-card-showroom.md` — 題目 B：Card Showroom 設計與 A/B 共用架構。

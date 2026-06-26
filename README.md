@@ -85,6 +85,7 @@ src/
 │   ├── GoodsView.vue
 │   ├── DiscoverView.vue
 │   ├── LiveView.vue
+│   ├── ShowroomView.vue   # 題目 B：卡片 showroom
 │   └── NotFoundView.vue
 └── assets/main.css        # ⑩ 全域樣式 + 設計 token
 ```
@@ -150,6 +151,7 @@ Tailwind v4 進入點 + `@theme` 設計 token：品牌洋紅 `--color-momo (#D62
 | `/goods/:id` | GoodsView | 商品詳情、折扣、促銷標籤、相關商品；查無商品的處理 |
 | `/discover` | DiscoverView | 編輯精選主題商品列（重用 sections） |
 | `/live` | LiveView | 直播購物，直播間卡 + `live` 變體商品卡 |
+| `/showroom` | ShowroomView | 商品卡 Showroom（題目 B）：卡片編輯器 + 即時預覽 + 全變體一覽 |
 | `*` | NotFoundView | 404 |
 
 ## 核心設計決策
@@ -165,6 +167,16 @@ Tailwind v4 進入點 + `@theme` 設計 token：品牌洋紅 `--color-momo (#D62
 購物車結帳 / 金流、會員登入、真實搜尋演算法、SSR / SEO、完整 RWD、像素級還原。
 i18n 目前為基礎建設層（機制與切換器就緒，UI 文案尚未全面接入）。
 理由與退守順序見 [`docs/02-tradeoffs.md`](./docs/02-tradeoffs.md)。
+
+## Card Showroom（題目 B）
+
+本 repo 同時涵蓋題目 B。A 與 B **共用同一套卡片架構**，B 在 A 的 `ProductCard` 上補齊展示 / 編輯 / 持久化 / 對外輸出：
+
+- **`/showroom`** — 卡片細節調整介面（變體 / 標題 / 價格 / 折扣 / 標籤 / 名次 / 倒數…），即時預覽、列出所有變體；設定以 `localStorage` 持久化（重整不遺失），並即時顯示是否符合 `Product` 契約。
+- **`public/momo-card.js`** — 框架無關的 Web Component `<momo-product-card>`，以 `data`(JSON) + `variant` 屬性驅動，與 Vue 版共用同一份 schema 語意。
+- **`public/sample.html`** — 獨立範例頁，僅以 `<script>` 載入卡片元件示範使用（HTML 屬性宣告 + JS 資料驅動兩種方式）。
+
+設計說明見 [`docs/04-card-showroom.md`](./docs/04-card-showroom.md)。
 
 ## 後續演進計畫（分模組）
 
