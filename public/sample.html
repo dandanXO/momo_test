@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>momo 商品卡 Web Component 範例</title>
+    <style>
+      body { margin: 0; padding: 24px; background: #f5f5f5;
+             font-family: 'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif; color: #333; }
+      h1 { color: #d62872; }
+      h2 { margin-top: 32px; font-size: 16px; }
+      .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 16px; max-width: 960px; }
+      code { background: #fff; padding: 2px 6px; border-radius: 4px; }
+      .note { color: #888; font-size: 14px; }
+    </style>
+    <!-- 透過 script 載入卡片元件，之後即可在任何 HTML 使用 <momo-product-card> -->
+    <script src="momo-card.js"></script>
+  </head>
+  <body>
+    <h1>momo 商品卡 — Web Component 範例</h1>
+    <p class="note">
+      此頁為獨立 HTML，僅以 <code>&lt;script src="momo-card.js"&gt;</code> 載入卡片元件，
+      不依賴 Vue 或任何框架。卡片由 schema（<code>data</code> 屬性）與 <code>variant</code> 驅動。
+    </p>
+
+    <h2>1. 四種變體（HTML 屬性宣告）</h2>
+    <div class="grid">
+      <momo-product-card
+        variant="standard"
+        data='{"title":"純棉寬版 T 恤 多色可選","image":"https://picsum.photos/seed/momo-a/400/400","price":390,"originalPrice":590,"rating":4.5,"reviewCount":880,"tags":["熱銷","免運"]}'>
+      </momo-product-card>
+
+      <momo-product-card
+        variant="flashSale"
+        ends-at=""
+        sold-ratio="0.72"
+        data='{"title":"無線藍牙耳機 ANC 降噪","image":"https://picsum.photos/seed/momo-b/400/400","price":1280,"originalPrice":1980,"rating":4.6,"reviewCount":1284,"tags":["限時"]}'>
+      </momo-product-card>
+
+      <momo-product-card
+        variant="ranking"
+        rank="1"
+        data='{"title":"變頻除濕機 12L 節能一級","image":"https://picsum.photos/seed/momo-c/400/400","price":5990,"rating":4.8,"reviewCount":3201,"tags":["熱銷"]}'>
+      </momo-product-card>
+
+      <momo-product-card
+        variant="live"
+        data='{"title":"玻尿酸保濕精華 30ml","image":"https://picsum.photos/seed/momo-d/400/400","price":690,"originalPrice":990,"rating":4.7,"reviewCount":560,"tags":["直播優惠"]}'>
+      </momo-product-card>
+    </div>
+
+    <h2>2. 以 JavaScript 動態建立（資料驅動）</h2>
+    <div class="grid" id="js-grid"></div>
+
+    <script>
+      // 設定限時下殺卡的倒數（3 小時後）
+      document.querySelector('momo-product-card[variant="flashSale"]')
+        .setAttribute('ends-at', new Date(Date.now() + 3 * 3600 * 1000).toISOString())
+
+      // 範例：用一份資料陣列動態生成卡片
+      const products = [
+        { title: '日本和牛燒肉片 300g', image: 'https://picsum.photos/seed/momo-e/400/400', price: 880, originalPrice: 1200, rating: 4.9, reviewCount: 410, tags: ['新品', '免運'] },
+        { title: '氣炸鍋 5.5L 大容量', image: 'https://picsum.photos/seed/momo-f/400/400', price: 1990, originalPrice: 2990, rating: 4.4, reviewCount: 2050, tags: ['滿額折'] },
+      ]
+      const grid = document.getElementById('js-grid')
+      products.forEach((p) => {
+        const card = document.createElement('momo-product-card')
+        card.setAttribute('variant', 'standard')
+        card.product = p // 也可用 property 直接帶入物件
+        grid.appendChild(card)
+      })
+    </script>
+  </body>
+</html>
