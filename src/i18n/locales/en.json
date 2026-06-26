@@ -11,5 +11,10 @@
     "title": "About",
     "description": "This is the about page."
   },
-  "language": "Language"
+  "language": "Language",
+  "counter": {
+    "count": "Count",
+    "double": "Double",
+    "increment": "Increment"
+  }
 }

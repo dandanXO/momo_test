@@ -11,5 +11,10 @@
     "title": "關於",
     "description": "這是關於頁面。"
   },
-  "language": "語言"
+  "language": "語言",
+  "counter": {
+    "count": "計數",
+    "double": "兩倍",
+    "increment": "增加"
+  }
 }
