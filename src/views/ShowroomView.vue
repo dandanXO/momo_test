@@ -33,9 +33,19 @@ const imageSeed = computed({
 
 <template>
   <main class="mx-auto max-w-7xl px-4 py-4">
-    <header class="mb-4">
-      <h1 class="text-2xl font-black text-ink">商品卡 Showroom</h1>
-      <p class="text-sm text-ink-soft">調整下方參數即時預覽商品卡，設定會自動儲存在瀏覽器（重整不遺失）。</p>
+    <header class="mb-4 flex flex-wrap items-end justify-between gap-2">
+      <div>
+        <h1 class="text-2xl font-black text-ink">商品卡 Showroom</h1>
+        <p class="text-sm text-ink-soft">調整下方參數即時預覽商品卡，設定會自動儲存在瀏覽器（重整不遺失）。</p>
+      </div>
+      <a
+        href="/sample.html"
+        target="_blank"
+        rel="noopener"
+        class="rounded-md border border-momo px-3 py-1.5 text-sm font-medium text-momo hover:bg-momo-light"
+      >
+        Web Component 範例（sample.html）↗
+      </a>
     </header>
 
     <div class="grid gap-6 lg:grid-cols-[1fr_320px]">

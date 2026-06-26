@@ -178,6 +178,8 @@ i18n 目前為基礎建設層（機制與切換器就緒，UI 文案尚未全面
 
 設計說明見 [`docs/04-card-showroom.md`](./docs/04-card-showroom.md)。
 
+**範例入口**：開發時開 `http://localhost:5173/sample.html`；build 後開 `dist/sample.html`。原始檔：[`public/sample.html`](./public/sample.html)、[`public/momo-card.js`](./public/momo-card.js)。Showroom 頁右上角也有「Web Component 範例」連結可直接開啟。
+
 ## 後續演進計畫（分模組）
 
 > 以模組為單位的演進路線，方便長期維護者分批接手。
